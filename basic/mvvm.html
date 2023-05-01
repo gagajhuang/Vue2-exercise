@@ -148,7 +148,10 @@
 
 
 <div id="app">
-  <input type="text">
+  {{ message }}
+  <div v-text="text_message"></div>
+  <div v-html="html_message"></div>
+  <input type="text" v-model="message">
 </div>
 
 <script>
@@ -156,9 +159,11 @@ var app = new Vue({
   el: '#app',
   // 在此建立資料內容
 
-  // data: {
-  //   message: '哈囉'
-  // }
+  data: {
+    message: '哈囉',
+    text_message: '我是 v-text，顯示純文字',
+    html_message: '<h2>我是 v-html，可呈現 html 的內容</h2>'
+  }
 })
 </script> 
         </div>
